@@ -1,14 +1,17 @@
 export class AppareilService {
     appareils = [
         {
+          id : 1,
           name:"Télévision",
           status:"éteint"
         },
         {
+          id : 2,
           name:"Ordinateur",
           status:"éteint"
         },
         {
+          id : 3,
           name:"Radio",
           status:"allumé"
         }
@@ -32,5 +35,14 @@ export class AppareilService {
 
     switchOff(i : number) {
         this.appareils[i].status = "éteint";
+    }
+  
+    getAppareilById(id : number) {
+      const appareil = this.appareils.find(
+        appareil => {
+          return appareil.id == id
+        }
+      );
+      return appareil;
     }
 }
